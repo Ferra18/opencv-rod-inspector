@@ -5,7 +5,7 @@
 
 ### Segmentazione
 
-Per prima cosa si è proceduto alla segmentazione dell'immagine. Nonostante la consegna specifichi che le immagini sono state acquisite con tecniche di *backlighting*, quindi il contrasto degli oggetti con lo sfondo è molto elevato. La consegna chiede comunque che il sistema possa funzionare anche con fonti di luce differente, quindi è stato utilizzato l'algoritmo di Otsu già implementato nella libreria di OpenCV, che permette di identificare un valore di soglia per la binarizzazione in maniera automatica (garantendo quindi un funzionamento migliore nel caso cambiassero le fonti di illuminazione).
+Per prima cosa si è proceduto alla segmentazione dell'immagine, nonostante la consegna specifichi che le immagini sono state acquisite con tecniche di *backlighting* (quindi il contrasto degli oggetti con lo sfondo è molto elevato). La consegna chiede comunque che il sistema possa funzionare anche con fonti di luce differente, quindi è stato utilizzato l'algoritmo di Otsu già implementato nella libreria di OpenCV, che permette di identificare un valore di soglia per la binarizzazione in maniera automatica (garantendo quindi un funzionamento migliore nel caso cambiassero le fonti di illuminazione).
 
 ### Identificazione degli oggetti
 
@@ -70,4 +70,4 @@ Per ciascuno di questi contorni è quindi stato applicato il metodo *approxPolyD
 
 In conclusione, le tecniche utilizzate hanno permesso di raggiungere un risultato abbastanza soddisfacente.
 
-I punti più ardui da affrontare sono stati sicuramente il calcolo della larghezza al baricentro e la divisione di rob con punti di contatto. Per via delle immagini di bassa qualità è più difficile identificare correttamente i pixel appartenenti alla retta parallela all'asse minore a causa delle approssimazioni che devono essere effettuate. Discorso simile per quanto riguarda la divisione delle rod, a cui si aggiunge il problema della linea di divisione: in alcuni casi può andare infatti ad intaccare l'hole di una delle due rod, facendo fallire così la classificazione per via di una rod "aperta".
+I punti più ardui da affrontare sono stati sicuramente il calcolo della larghezza al baricentro e la divisione di rod con punti di contatto. Per via delle immagini di bassa qualità è più difficile identificare correttamente i pixel appartenenti alla retta parallela all'asse minore a causa delle approssimazioni che devono essere effettuate. Discorso simile per quanto riguarda la divisione delle rod, a cui si aggiunge il problema della linea di divisione: in alcuni casi può andare infatti ad intaccare l'hole di una delle due rod, facendo fallire così la classificazione per via di una rod "aperta".

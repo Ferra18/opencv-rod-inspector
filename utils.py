@@ -26,7 +26,7 @@ def interpret_hierarchy(contours, hierarchy):
         else:                       # Hole contour
             hole = Hole(c)
             index = hierarchy[i][3]
-            # Find the parent rod, None is there isn't (round object instead of a rod)
+            # Find the parent rod, None if there isn't (round object instead of a rod)
             rod = next((x for x in rod_list if x.label == index), None)
             try:
                 rod.append_hole(hole)
